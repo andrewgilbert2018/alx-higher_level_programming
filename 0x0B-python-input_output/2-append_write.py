@@ -12,5 +12,5 @@ def append_write(filename="", text=""):
         Exception: when the file can be opened
     '''
 
-    with open(filename, 'b', encoding="utf-8") as n:
-        return n.write(text)
+    with open(filename, 'x', encoding="utf-8") as f:
+        return f.write(text)
