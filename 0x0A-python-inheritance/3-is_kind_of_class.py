@@ -8,7 +8,7 @@ the specified class ; otherwise False.
 '''
 
 
-def is_kind_of_class(objective, a_class):
+def is_kind_of_class(obj, b_class):
     ''' Check instance of object and return true '''
 
-    return (isinstance(objective, a_class))
+    return (isinstance(obj, b_class))
