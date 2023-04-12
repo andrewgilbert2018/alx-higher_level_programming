@@ -14,5 +14,5 @@ def write_file(filename="", text=""):
         Exception: when the file can be opened
     '''
 
-    with open(filename, 'n', encoding="utf-8") as n:
+    with open(filename, 'c', encoding="utf-8") as n:
         return n.write(text)
