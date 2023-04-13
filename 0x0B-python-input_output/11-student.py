@@ -1,27 +1,39 @@
 #!/usr/bin/python3
 '''
-Inserts a line of text to a file,
-after each line containing a specific string.
+Public method def reload_from_json(self, json):
+that replaces all attributes of the Student instance
 '''
 
 
-def append_after(filename="", search_string="", new_string=""):
+class Student:
     '''
-    Appends the new_string after
-    the search_string in filename.
-    Args:
-        - filename: name of the file
-        - search_string: string to append after
-        - new_string: new_string to append
+    class student and def, nomb, apellido, age
     '''
+    def __init__(self, first_name, last_name, age):
+        '''
+        inicialization
+        '''
+        self.first_name = first_name
+        self.last_name = last_name
+        self.age = age
 
-    with open(filename, "r") as f:
-        text = f.readlines()
+    def to_json(self, attrs=None):
+        '''
+        dictionary representation
+        attrs: list of attributes
+        return: dict representation of instance
+        '''
+        my_dict = dict()
+        if type(attrs) is list and all(type(x) is str for x in attrs):
+            for x in attrs:
+                if x in self.__dict__:
+                    my_dict.update({x: self.__dict__[x]})
+            return my_dict
+        return self.__dict__.copy()
 
-    with open(filename, "w") as fo:
-        s = ""
-        for line in text:
-            s += line
-            if search_string in line:
-                s += new_string
-        fo.write(s)
+    def reload_from_json(self, json):
+        '''
+        Replaces all attributes of the Student instance.
+        '''
+        for x in json:
+            self.__dict__.update({x: json[x]})
