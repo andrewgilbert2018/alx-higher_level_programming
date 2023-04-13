@@ -1,4 +1,4 @@
-#!/usr/bin/pytho3
+#!/usr/bin/python3
 
 '''
 a function that returns True if the object is an
@@ -9,6 +9,6 @@ the specified class ; otherwise False.
 
 
 def is_kind_of_class(obj, a_class):
-    ''' Check instance of object and return true '''
+    '''Check instance of object and return true'''
 
     return (isinstance(obj, a_class))
