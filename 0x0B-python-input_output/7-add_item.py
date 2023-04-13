@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-'''
- script that adds all arguments to a Python list, and then save them to a file
- '''
-
+"""Module 7-add_item.
+Adds all arguments to a Python list,
+and then save them to a file.
+"""
 
 import sys
 import json
