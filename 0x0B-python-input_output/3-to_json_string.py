@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-''' Module that contains Write a function that returns the JSON representation of an object (string):
+''' Module that contains Write a function that returns the JSON representation of an object
 '''
 import json
 
