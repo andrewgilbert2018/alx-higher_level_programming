@@ -11,5 +11,5 @@ def load_from_json_file(filename):
     Raises:
         Exception: when the object can't be encoded
     '''
-    with open(filename, 'c', encoding="utf-8") as f:
+    with open(filename, 'r', encoding="utf-8") as f:
         return json.load(f)
