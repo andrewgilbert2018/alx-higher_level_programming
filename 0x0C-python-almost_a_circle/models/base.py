@@ -6,6 +6,7 @@ import json
 
 
 class Base:
+    ''' Class Base Defines '''
 
     __nb_objects = 0
 
