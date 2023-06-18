@@ -14,12 +14,13 @@ def select_states():
         database=argv[3]
     )
     current = database.cursor()
-    curent.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id")
+    current.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id")
     rows = curent.fetchall()
     for row in rows:
         print(row)
     current.close()
     database.close()
+
 
 if __name__ == "__main__":
     select_states()
