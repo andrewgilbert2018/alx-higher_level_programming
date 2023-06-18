@@ -23,6 +23,5 @@ def select_states():
     cut.close()
     database.close()
 
-
 if __name__ == "__main__":
     select_states()
