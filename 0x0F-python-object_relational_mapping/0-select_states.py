@@ -21,5 +21,6 @@ def select_states():
     current.close()
     database.close()
 
+
 if __name__ == "__main__":
     select_states()
