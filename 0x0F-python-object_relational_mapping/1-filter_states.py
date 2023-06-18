@@ -15,7 +15,7 @@ def select_states():
     )
     current = database.cursor()
     current.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id")
-    rows = curent.fetchall()
+    rows = current.fetchall()
     for row in rows:
         print(row)
     current.close()
