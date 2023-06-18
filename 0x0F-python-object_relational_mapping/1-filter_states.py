@@ -13,12 +13,12 @@ def select_states():
         passwd=argv[2],
         database=argv[3]
     )
-    current = database.cursor()
-    current.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id")
-    rows = current.fetchall()
+    cut = database.cursor()
+    cut.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id")
+    rows = cut.fetchall()
     for row in rows:
         print(row)
-    current.close()
+    cut.close()
     database.close()
 
 
