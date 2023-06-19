@@ -13,7 +13,7 @@ def select_states():
         passwd=argv[2],
         database=argv[3]
     )
-    current = db.cursor()
+    current = database.cursor()
     sql_string = "SELECT * FROM states WHERE name \
         LIKE BINARY '{}'".format(argv[4])
     current.execute(sql_string)
