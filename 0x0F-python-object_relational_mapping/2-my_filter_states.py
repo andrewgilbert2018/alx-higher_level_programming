@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-""" a python script that filter states with sql inj guard"""
+""" a python script that filter states """
 import MySQLdb
 from sys import argv
 
 
 def select_states():
-    """a functon that  access database print states by input """
+    """ a function that  access database and  print states by input """
     database = MySQLdb.connect(
         host='localhost',
         port=3306,
@@ -13,14 +13,14 @@ def select_states():
         passwd=argv[2],
         database=argv[3]
     )
-    cut = database.cursor()
+    current = db.cursor()
     sql_string = "SELECT * FROM states WHERE name \
-        LIKE BINARY %s"
-    cut.execute(sql_string, (argv[4],))
-    rows = cut.fetchall()
+        LIKE BINARY '{}'".format(argv[4])
+    current.execute(sql_string)
+    rows = current.fetchall()
     for row in rows:
         print(row)
-    cut.close()
+    current.close()
     database.close()
 
 if __name__ == "__main__":
