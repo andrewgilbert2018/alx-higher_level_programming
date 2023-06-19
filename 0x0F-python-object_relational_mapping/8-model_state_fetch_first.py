@@ -7,7 +7,7 @@ from sqlalchemy.orm import sessionmaker
 
 
 def fetch_states():
-    """ function that access database and print state """
+    """ a function that access database and print state """
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
         argv[1], argv[2], argv[3]), pool_pre_ping=True)
     Base.metadata.create_all(engine)
@@ -22,5 +22,5 @@ def fetch_states():
     session.close()
 
 
-if __name__ == "__imain__":
+if __name__ == "__main__":
     fetch_states()
