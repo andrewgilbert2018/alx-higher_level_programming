@@ -19,5 +19,6 @@ def fetch_states():
 
     session.close()
 
+
 if __name__ == "__main__":
     fetch_states()
