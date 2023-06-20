@@ -1,6 +1,8 @@
 #!/usr/bin/python3
-""" a python script that list all State objects, and corresponding City objects,
-contained in the database"""
+"""
+a python script that list all State objects, and corresponding City objects,
+contained in the database
+"""
 from sys import argv
 from sqlalchemy import (create_engine)
 from sqlalchemy.orm import Session
@@ -25,6 +27,8 @@ if __name__ == "__main__":
     for state in all_states:
         print("{}: {}".format(state.id, state.name))
         for city in state.cities:
+
             print("{}{}: {}".format(" "*4, city.id, city.name))
+
 
     session.close()
