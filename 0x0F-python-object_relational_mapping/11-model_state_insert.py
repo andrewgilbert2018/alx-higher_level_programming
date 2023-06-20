@@ -18,5 +18,7 @@ def add_state():
     session.commit()
     print(state.id)
     session.close()
+
+
 if __name__ == "__main__":
     add_state()
