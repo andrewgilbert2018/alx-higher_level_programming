@@ -1,31 +1,25 @@
 #!/usr/bin/python3
-""" a python script that creates State"""
-from sys import argv
-from relationship_state import Base, State
-from relationship_city import City
-from sqlalchemy import (create_engine)
-from sqlalchemy.orm import Session
+""" a python script that defines city, state"""
+from sqlalchemy import Column, Integer, String, ForeignKey
+from relationship_state import Base
 
-if __name__ == "__main__":
-    username = argv[1]
-    password = argv[2]
-    database = argv[3]
 
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
-                           username,
-                           password,
-                           database),
-                           pool_pre_ping=True
-                           )
-    Base.metadata.create_all(engine)
-    session = S(engine)
-
-    new_state = "California"
-    new_city = "San Francisco"
-    newState = State(name=new_state)
-    newCity = City(name=new_city, state=newState)
-
-    session.add(newState)
-    session.add(newCity)
-    session.commit()
-    session.close()
+class City(Base):
+    """ defines City class """
+    __tablename__ = 'cities'
+    id = Column(
+                Integer,
+                autoincrement=True,
+                unique=True,
+                nullable=False,
+                primary_key=True
+                )
+    name = Column(
+                  String(128),
+                  nullable=False
+                  )
+    state_id = Column(
+                      Integer,
+                      ForeignKey("states.id"),
+                      nullable=False,
+                      )
