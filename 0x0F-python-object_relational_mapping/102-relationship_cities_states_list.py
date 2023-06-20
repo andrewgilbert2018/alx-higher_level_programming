@@ -7,6 +7,8 @@ from sqlalchemy import (create_engine)
 from sqlalchemy.orm import Session
 from relationship_city import Base, City
 from relationship_state import State
+
+
 if __name__ == "__main__":
     username = argv[1]
     password = argv[2]
@@ -24,4 +26,4 @@ if __name__ == "__main__":
 
     for city in cities:
         print("{}: {} -> {}".format(city.id, city.name, city.state.name))
-    session.close()i
+    session.close()
