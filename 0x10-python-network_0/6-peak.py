@@ -8,11 +8,19 @@ def find_peak(list_of_integers):
     """
     A function that returns the peak of a list
     """
-    if list_of_integers:
-        if(list_of_integers[0] > list_of_integers[1]):
-            return list_of_integers[0]
-        elif(list_of_integers[-1] > list_of_integers[-2]):
-            return list_of_integers[-1]
-        else:
-            return(max(list_of_integers))
-    return(None)
+    length = len(list_of_integers) - 1
+
+    if not list_of_integers:
+        return None
+
+    if list_of_integers[0] >= list_of_integers[1]:
+        return list_of_integers[0]
+
+    if list_of_integers[length] > list_of_integers[length - 1]:
+        return list_of_integers[length]
+
+    for i in range(1, length):
+        if list_of_integers[i] > list_of_integers[i + 1] and list_of_integers[i] > list_of_integers[i - 1]:
+            return(list_of_integers[i])
+
+    return None
