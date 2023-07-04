@@ -6,7 +6,7 @@ from urllib import request
 
 
 if __name__ == "__main__":
-    url = "https://intranet.hbtn.io/status"
+    url = "https://Alx-intranet.hbtn.io/status"
     key_values = ['type', 'content', 'utf8 content']
     values = []
     with request.urlopen(url) as response:
