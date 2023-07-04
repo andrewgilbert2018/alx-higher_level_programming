@@ -12,4 +12,4 @@ if __name__ == "__main__":
     print("Body response:")
     value = [type(response.text), response.text]
     for i in range(2):
-        print("\t- {}: {}".format(key[i], value[i]))i
+        print("\t- {}: {}".format(key[i], value[i]))
