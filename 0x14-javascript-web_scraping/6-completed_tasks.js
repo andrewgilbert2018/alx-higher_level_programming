@@ -2,6 +2,7 @@
 const request = require('request');
 const MyFiles = process.argv.slice(2);
 let data;
+request('https://jsonplaceholder.typicode.com/todos' + MyFiles[0],
 const dict = {};
 request(MyFiles[0], function (error, response, body) {
   if (error) console.error('error:', error);
