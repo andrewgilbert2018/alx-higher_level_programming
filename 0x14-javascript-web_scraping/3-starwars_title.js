@@ -2,7 +2,7 @@
 const request = require('request');
 const MyFiles = process.argv.slice(2);
 let data;
-request('https://swapi-api.alx-tools.com/api/films/:id' + MyFiles[0],
+request('https://swapi-api.alx-tools.com/api/films/' + MyFiles[0],
   function (error, response, body) {
     if (error) console.error('error:', error);
     else {
